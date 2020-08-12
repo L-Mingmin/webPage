@@ -12,7 +12,8 @@ Vue.use(ElementUI)
 
 // 设置反向代理，前端请求默认发送到http://localhost.8443/api
 var axios = require('axios')
-axios.defaults.baseURL = 'http://47.104.188.61:8443/api'
+// axios.defaults.baseURL = 'http://47.104.188.61:8443/api'
+axios.defaults.baseURL = 'http://127.0.0.1:8443/api'
 
 // 全局注册，之后可在其它组件中通过this.$axios()发送数据
 Vue.prototype.$axios = axios

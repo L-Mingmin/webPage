@@ -16,16 +16,16 @@ public class ProjectService {
     ProjectDAO projectDAO;
 
     public List<Project> getAllByCategory(String category) {
-        return projectDAO.findAllByCategory(category);
+        return projectDAO.findAllByCategoryOrderByReleasedateDesc(category);
     }
 
     public List<Project> getAll() {
-        Sort sort = Sort.by(Sort.Direction.DESC, "id");
+        Sort sort = Sort.by(Sort.Direction.DESC, "releasedate");
         return projectDAO.findAll(sort);
     }
 
     public List<Project> getAllByDate(String start, String end) {
-        return projectDAO.findAllByReleasedateBetween(start, end);
+        return projectDAO.findAllByReleasedateBetweenOrderByReleasedateDesc(start, end);
     }
 
 }

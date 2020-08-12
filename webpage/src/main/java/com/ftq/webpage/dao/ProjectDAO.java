@@ -7,8 +7,8 @@ import java.util.List;
 
 public interface ProjectDAO extends JpaRepository<Project, Integer> {
 
-    List<Project> findAllByCategory(String category);
+    List<Project> findAllByCategoryOrderByReleasedateDesc(String category);
 
-    List<Project> findAllByReleasedateBetween(String start, String end);
+    List<Project> findAllByReleasedateBetweenOrderByReleasedateDesc(String start, String end);
 
 }
