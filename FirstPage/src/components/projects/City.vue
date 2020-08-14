@@ -53,7 +53,7 @@
 <script>
 import SearchBar from './SearchBar'
 export default {
-  name: 'Projects',
+  name: 'City',
   components: {SearchBar},
   data () {
     return {
@@ -62,10 +62,25 @@ export default {
       pagesize: 10
     }
   },
+  mounted: function () {
+    this.loadProjects()
+  },
   methods: {
+    loadProjects () {
+      this.$axios
+        .get('/city')
+        .then(response => {
+          if (response && response.status === 200) {
+            this.projects = response.data
+          }
+        })
+        .catch(failResponse => {
+          console.log('Load city projects can not work correctly...')
+        })
+    },
     search () {
       this.$axios
-        .post('/searchByDate', {start: this.$refs.searchBar.date[0], 'end': this.$refs.searchBar.date[1]})
+        .post('/city/searchByDate', {start: this.$refs.searchBar.date[0], 'end': this.$refs.searchBar.date[1]})
         .then(successResponse => {
           if (successResponse.status === 200) {
             this.projects = successResponse.data

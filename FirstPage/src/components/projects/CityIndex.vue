@@ -4,21 +4,21 @@
         <sideMenu @indexSelect="listByCategory" ref="sideMenu"></sideMenu>
       </el-aside>
       <el-main>
-        <projects class="projectsArea" ref="projectsArea"></projects>
+        <city class="projectsArea" ref="projectsArea"></city>
       </el-main>
     </el-container>
 </template>
 
 <script>
 import SideMenu from './SideMenu'
-import Projects from './Projects'
+import City from './City'
 export default{
-  name: 'HomeIndex',
-  components: {SideMenu, Projects},
+  name: 'CityIndex',
+  components: {SideMenu, City},
   methods: {
     listByCategory () {
       var cid = this.$refs.sideMenu.cid
-      var url = 'categories/' + cid + '/projects'
+      var url = '/city/categories/' + cid + '/projects'
       this.$axios
         .get(url)
         .then(successResponse => {

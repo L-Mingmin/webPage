@@ -12,7 +12,7 @@
     <el-menu-item v-for="(item, i) in navList" :key="i" :index="item.name">
       {{item.navItem}}
     </el-menu-item>
-    <span style="position: absolute;padding-top: 20px;right: 43%;font-size: 20px;font-weight: bold">不知道叫啥子的系统</span>
+    <span style="position: absolute;padding-top: 20px;right: 43%;font-size: 20px;font-weight: bold">招标信息管理系统</span>
     <i class="el-icon-switch-button" v-on:click="logout" style="float:right;font-size: 40px;color: #222;padding: 10px"></i>
   </el-menu>
 </template>
@@ -24,13 +24,15 @@ export default {
     return {
       navList: [
         {name: '/index', navItem: '首页'},
+        {name: '/province', navItem: '省级项目'},
+        {name: '/city', navItem: '市级项目'},
         {name: '/subscribe', navItem: '订阅'}
       ]
     }
   },
   methods: {
     handleSelect (key, keyPath) {
-      // console.log(key, keyPath)
+      // console.log(key)
     },
     logout () {
       this.$axios

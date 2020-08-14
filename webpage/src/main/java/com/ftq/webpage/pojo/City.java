@@ -4,13 +4,12 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.sql.Date;
 
 @Data
 @Entity
 @Table(name = "city")
 @JsonIgnoreProperties({"handler","hibernateLazyInitializer"})
-public class Project {
+public class City {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
