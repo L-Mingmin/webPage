@@ -12,16 +12,20 @@ public class UserService {
     UserDAO userDAO;
 
     public boolean isExist(String username) {
-        User user = getByName(username);
+        User user = getUserByName(username);
         return null != user;
     }
 
-    public User getByName(String username) {
+    public User getUserByName(String username) {
         return userDAO.findByUsername(username);
     }
 
-    public User get(String username, String password) {
+    public User getUser(String username, String password) {
         return userDAO.findByUsernameAndPassword(username, password);
+    }
+
+    public void add(User user) {
+        userDAO.save(user);
     }
 
 }

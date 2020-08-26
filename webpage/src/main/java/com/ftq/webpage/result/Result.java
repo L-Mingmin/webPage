@@ -1,19 +1,12 @@
 package com.ftq.webpage.result;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
 public class Result {
-    //响应码
-    private int code;
-
-
-    public Result(int code) {
-        this.code = code;
-    }
-
-    public int getCode() {
-        return this.code;
-    }
-
-    public void setCode(int code){
-        this.code = code;
-    }
+    private int code;       //响应状态码
+    private String msg;     //响应信息
+    private Object data;    //响应数据体
 }

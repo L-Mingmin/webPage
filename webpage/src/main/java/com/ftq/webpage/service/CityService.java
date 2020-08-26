@@ -27,4 +27,8 @@ public class CityService {
         return cityDAO.findAllByReleasedateBetweenOrderByReleasedateDesc(start, end);
     }
 
+    public List<City> getAllByCategories(List<String> categories) {
+        return cityDAO.findAllByCategoryInOrderByReleasedateDesc(categories);
+    }
+
 }

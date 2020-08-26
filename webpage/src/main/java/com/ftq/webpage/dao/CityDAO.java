@@ -11,4 +11,6 @@ public interface CityDAO extends JpaRepository<City, Integer> {
 
     List<City> findAllByReleasedateBetweenOrderByReleasedateDesc(String start, String end);
 
+    List<City> findAllByCategoryInOrderByReleasedateDesc(List<String> categories);
+
 }

@@ -10,4 +10,6 @@ public interface ProvinceDAO extends JpaRepository<Province, Integer> {
     List<Province> findAllByCategoryOrderByReleasedateDesc(String category);
 
     List<Province> findAllByReleasedateBetweenOrderByReleasedateDesc(String start, String end);
+
+    List<Province> findAllByCategoryInOrderByReleasedateDesc(List<String> categories);
 }

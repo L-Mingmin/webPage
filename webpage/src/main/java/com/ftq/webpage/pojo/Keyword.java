@@ -7,14 +7,15 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "user")
+@Table(name = "keywords")
 @JsonIgnoreProperties({"handler","hibernateLazyInitializer"})
-public class User {
+public class Keyword {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
-    private String username;
-    private String password;
-    private String salt;
+
+    private String keyword;
+
 }

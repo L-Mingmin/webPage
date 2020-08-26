@@ -26,4 +26,8 @@ public class ProvinceService {
     public List<Province> getAllByDate(String start, String end) {
         return provinceDAO.findAllByReleasedateBetweenOrderByReleasedateDesc(start, end);
     }
+
+    public List<Province> getAllByCategories(List<String> categories) {
+        return provinceDAO.findAllByCategoryInOrderByReleasedateDesc(categories);
+    }
 }
